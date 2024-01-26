@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="join-container">
+        <input type="text" id="nickname" autocomplete="off" placeholder="Введите имя пользователя">
+        <input type="color" id="color-picker" value="#0000ff">
+    </div>   
+        <button id="join-chat" style="display: block;">Войти</button>
+
+    </div>
+    <div id="chat-container" style="display:none;">
+        
+        <div id="user-listcont"><h1 id="userlistname">Участники чата</h1><div id="user-list"></div> </div>
+        <div id="chat-box"></div>
+        <input type="text" id="message-input" placeholder="Напишите что-нибудь...">
+        <button id="send-message">Отправить</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

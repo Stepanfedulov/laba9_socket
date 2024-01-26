@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#join-container {
+    text-align: center;
+    margin-top: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+#nickname{
+    border-color: #00ffff;
+    font-family: sans-serif;
+    font-size: 11pt;
+    border-radius: 30px;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    border-width: 3px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+#color-picker{
+    border-color: #00ffff;
+    border-radius: 30px;
+    border-width: 3px;
+    height: 60px;
+    width: 60px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#color-picker::-webkit-color-swatch-wrapper {
+    padding: 0; 
+}
+#color-picker::-webkit-color-swatch {
+    border: none;
+    border-radius: 30px;
+}
+
+#join-chat{
+    margin-left: auto;
+    margin-right: auto;
+    font-family: sans-serif;
+    font-size: 11pt;
+    border-color: #00ffff;
+    font-family: sans-serif;
+    border-radius: 30px;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-width: 3px;
+}
+#chat-container {
+    text-align: center;
+}
+#user-listcont {
+    float: left;
+    text-align: center;
+    width: 16vw;
+    border: 20px solid #ccc;
+    padding: 10px;
+    height: 75vh;
+    border-radius: 30px;
+    overflow-y: auto;
+    margin-left: 2.5vw;
+    font-size: 18pt;
+}
+#userlistname{
+    border-bottom: 20px solid #ccc; 
+    margin-left: -0.5em;
+    margin-right: -0.5em;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    
+}
+#user-listcont::-webkit-scrollbar{
+    display: none;
+}
+#chat-box {
+    margin-right: 2.5vw;
+    height: 75vh;
+    width: 70.5vw;
+    overflow-y: auto;
+    padding: 10px;
+    border: 20px solid #ccc;
+    margin-top: 4.5vh;
+    margin-left: auto;
+    border-radius: 30px;
+    margin-bottom: 2.5vh;
+}
+
+#message-input {
+    width:79vw;
+    border: 20px solid #ccc;
+    background-color: #ccc;
+    color: black;
+    border-radius: 30px;
+    margin-left: 2.5vw;
+    margin-right: auto;
+    padding-left: 20px;
+    display: inline-block;
+    height: 5vh;
+    font-size: 20pt;
+    text-align: center;
+}
+#send-message{
+    border: 20px solid #00ffff;
+    border-radius: 30px;
+    display: inline-block;
+    height: 8.65vh;
+    width: 10vw;
+    font-size: 20pt;
+    margin-inline: 1vw;
+    margin-inline-end: 2.5vw;
+    background-color: #00ffff;
+}
+.message {
+    border-bottom: 1px solid #eee;
+    padding: 5px;
+    word-break: normal;
+}
+
+.nickname {
+    font-weight: bold;
+}
+
+.time {
+    color: #999;
+    font-size: 0.8em;
+}
