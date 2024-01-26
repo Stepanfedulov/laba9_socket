@@ -9,7 +9,9 @@ const messageInput = document.getElementById('message-input');
 const sendMessageButton = document.getElementById('send-message');
 const chatBox = document.getElementById('chat-box');
 const userList = document.getElementById('user-list');
-
+const bottomBox=document.getElementById('bottom-box')
+const emojiContainer=document.getElementById("emoji-container");
+const emojiButton=document.getElementById('emoji-button')
 joinChatButton.addEventListener('click', () => {
     const nickname = nicknameInput.value.trim();
     const color = colorPicker.value;
@@ -19,19 +21,24 @@ joinChatButton.addEventListener('click', () => {
 
     socket.emit('join', { nickname, color });
     joinContainer.style.display = 'none';
-    chatContainer.style.display = 'block';
+    chatContainer.style.display = 'flex';
     joinChatButton.style.display = 'none';
-    userList.style.display="block"
+    userList.style.display="flex";
+    bottomBox.style.display='flex';
 });
 
 sendMessageButton.addEventListener('click', sendMessage);
-
+emojiButton.addEventListener('click',()=>{
+    emojiContainer.style.display=emojiContainer.style.display==='none'?'block':'none';})
 messageInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         sendMessage();
     }
 });
-
+function addEmoji(emoji){
+    messageInput.value += emoji;
+    emojiContainer.style.display='none';
+}
 function sendMessage() {
     message = messageInput.value.trim().replace(/</gi,'&lt').replace(/>/gi,'&gt');
     if (message) {

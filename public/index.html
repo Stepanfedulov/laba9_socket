@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Messenger</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,12 +15,24 @@
 
     </div>
     <div id="chat-container" style="display:none;">
-        
-        <div id="user-listcont"><h1 id="userlistname">Участники чата</h1><div id="user-list"></div> </div>
+        <div id="user-listcont"><h1 id="userlistname">Участники<br> чата</h1><div id="user-list"></div> </div>
         <div id="chat-box"></div>
-        <input type="text" id="message-input" placeholder="Напишите что-нибудь...">
-        <button id="send-message">Отправить</button>
+
     </div>
+       <div id="bottom-box" style="display: none;">
+        <input type="text" id="message-input" placeholder="Напишите что-нибудь...">
+        <button id="emoji-button">😀</button> 
+         <div id="emoji-container" style="display: none;">
+        <button class="emoji" onclick="addEmoji('😀')">😀</button>
+        <button class="emoji" onclick="addEmoji('😃')">😃</button>
+        <button class="emoji" onclick="addEmoji('😄')">😄</button>
+        <button class="emoji" onclick="addEmoji('😇')">😇</button>
+        <button class="emoji" onclick="addEmoji('🤓')">🤓</button>
+      </div>
+        <button id="send-message">Отправить</button>
+
+      
+      </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="script.js"></script>
 </body>
