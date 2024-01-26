@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 const publicDirectoryPath = path.join(__dirname, "/public");
 
 app.use(express.static(publicDirectoryPath));
@@ -19,7 +19,7 @@ io.on("connection", (socket) => {
 
     socket.on('join', ({ nickname, color }) => {
         users[socket.id] = { nickname, color };
-        socket.broadcast.emit('message', { user: 'Admin', text: `${nickname} has joined the chat` });
+        socket.broadcast.emit('message', {user:users[socket.id], text: `${nickname} has joined the chat` ,time: new Date().toISOString() });
         io.emit('userList', Object.values(users));
     });
 
@@ -29,8 +29,8 @@ io.on("connection", (socket) => {
 
     socket.on('disconnect', () => {
         const nickname = users[socket.id] ? users[socket.id].nickname : 'Unknown User';
-        delete users[socket.id];
-        socket.broadcast.emit('message', { user: 'Admin', text: `${nickname} has left the chat` });
+        socket.broadcast.emit('message', {user:users[socket.id], text: `${nickname} has left the chat`, time: new Date().toISOString()  }); 
+        delete users[socket.id];   
         io.emit('userList', Object.values(users));
     });
 });
@@ -38,3 +38,4 @@ io.on("connection", (socket) => {
 server.listen(port, () => {
     console.log(`Server is up on port ${port}!`);
 });
+
