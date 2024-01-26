@@ -117,7 +117,7 @@ body {
     margin-inline-end: 2.5vw;
     background-color: #00ffff;
 }
-.message {
+.msg {
     border-bottom: 1px solid #eee;
     padding: 5px;
     word-break: normal;

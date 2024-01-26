@@ -33,7 +33,7 @@ messageInput.addEventListener('keydown', (event) => {
 });
 
 function sendMessage() {
-    const message = messageInput.value.trim();
+    message = messageInput.value.trim().replace(/</gi,'&lt').replace(/>/gi,'&gt');
     if (message) {
         socket.emit('sendMessage', message);
         messageInput.value = '';
